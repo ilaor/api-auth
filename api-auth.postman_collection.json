@@ -1,0 +1,120 @@
+{
+  "info": {
+    "_postman_id": "e47c5435-6c49-4214-bbca-a2164594b923",
+    "name": "api-auth",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52232553",
+    "_collection_link": "https://go.postman.co/collection/52232553-e47c5435-6c49-4214-bbca-a2164594b923?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "postear usuario",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"ivan@ivan.com\",\n  \"displayName\": \"ivan\",\n  \"password\": \"1234\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4100/api/user",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4100",
+          "path": [
+            "api",
+            "user"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "obtener usuario",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4100/api/user",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4100",
+          "path": [
+            "api",
+            "user"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"ivan@ivan.com\",\n  \"pass\": \"1234\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4100/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4100",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "registro",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Ivan\",\n  \"email\": \"ivan@test.com\",\n  \"pass\": \"1234\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4100/api/auth/reg",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4100",
+          "path": [
+            "api",
+            "auth",
+            "reg"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
