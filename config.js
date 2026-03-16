@@ -1,6 +1,5 @@
-module.exports = { 
- DB: process.env.MONGODB || 'mongodb://localhost:27017/SD',
- PORT: process.env.PORT || 4100,
- SECRET: 'miclavesecretadetokens',
- TOKEN_EXP_TIME: 7*24*60 // 7 días expresados en minutos
-}; 
+module.exports = {
+  PORT: 4100,
+  DB: "mongodb://localhost:27017/api-auth",
+  SECRET: "secreto_super_seguro"
+};
