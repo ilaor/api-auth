@@ -2,23 +2,23 @@
   "name": "api-auth",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+  "keywords": [],
+  "homepage": "https://github.com/ilaor/api-auth#readme",
+  "bugs": {
+    "url": "https://github.com/ilaor/api-auth/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ilaor/api-auth.git"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
+  "author": "",
   "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/ilaor/api-auth/issues"
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
-  "homepage": "https://github.com/ilaor/api-auth#readme",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "cors": "^2.8.6",

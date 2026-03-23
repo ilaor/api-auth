@@ -57,13 +57,43 @@
       "response": []
     },
     {
+      "name": "registro",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"ivann\",\n  \"email\": \"ivann@test.com\",\n  \"pass\": \"1234\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4100/api/auth/reg",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4100",
+          "path": [
+            "api",
+            "auth",
+            "reg"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
       "name": "login",
       "request": {
         "method": "POST",
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"email\": \"ivan@ivan.com\",\n  \"pass\": \"1234\"\n}",
+          "raw": "{\n  \"email\": \"ivann@test.com\",\n  \"pass\": \"1234\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -87,32 +117,10 @@
       "response": []
     },
     {
-      "name": "registro",
+      "name": "uso token",
       "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"name\": \"Ivan\",\n  \"email\": \"ivan@test.com\",\n  \"pass\": \"1234\"\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": {
-          "raw": "http://localhost:4100/api/auth/reg",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "4100",
-          "path": [
-            "api",
-            "auth",
-            "reg"
-          ]
-        }
+        "method": "GET",
+        "header": []
       },
       "response": []
     }
