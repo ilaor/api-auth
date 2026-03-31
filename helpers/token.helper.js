@@ -22,29 +22,31 @@ const EXP_TIME = require('../config').TOKEN_EXP_TIME;
 // VERIFY SIGNATURE:
 // HMACSHA256 ( base64UrlEncode(HEADER) + "." + base64UrlEncode(PAYLOAD), SECRET )
 //
-function creaToken( user ) {
- const payload = {
- sub: user._id,
- iat: moment().unix(),
- exp: moment().add(EXP_TIME, 'minutes').unix()
- };
- // console.log( { payload: payload });
- return jwt.encode(payload, SECRET);
+function creaToken(user) {
+  const payload = {
+    sub: user._id,
+    iat: moment().unix(),
+    exp: moment().add(EXP_TIME, 'minutes').unix()
+  };
+  // console.log( { payload: payload });
+  return jwt.encode(payload, SECRET);
 }
-function decodificaToken( token ) {
- return new Promise( (resolve, reject) => {
- try {
- const payload = jwt.decode( token, SECRET, false ); // false: verifica firma y caducidad
- resolve(payload.sub); // Si todo ha ido bien, devolvemos el id del usuario
- } catch (err) {
- reject( {
- status: 401,
- msg: err.message
- });
- }
- });
+
+function decodificaToken(token) {
+  return new Promise((resolve, reject) => {
+    try {
+      const payload = jwt.decode(token, SECRET, false); // false: verifica firma y caducidad
+      resolve(payload.sub); // Si todo ha ido bien, devolvemos el id del usuario
+    } catch (err) {
+      reject({
+        status: 401,
+        msg: err.message
+      });
+    }
+  });
 }
+
 module.exports = {
- creaToken,
- decodificaToken
-}; 
+  creaToken,
+  decodificaToken
+};
