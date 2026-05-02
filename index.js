@@ -7,6 +7,9 @@ const helmet = require("helmet");
 const mongojs = require("mongojs");
 const moment = require("moment");
 
+const fs = require('fs')
+const https = require('https')
+
 const AuthMiddleware = require('./middlewares/auth.middleware');
 const PassHelper = require('./helpers/pass.helper'); 
 const TokenHelper = require("./helpers/token.helper");
@@ -245,6 +248,13 @@ app.get("/api/auth/me", AuthMiddleware.auth, (req, res) => {
 // START
 // ============================
 
-app.listen(port, () => {
-  console.log(`API AUTH ejecutándose en http://localhost:${port}/api`);
-});
+// app.listen(port, () => {
+//   console.log(`API AUTH ejecutándose en http://localhost:${port}/api`);
+// });
+
+https.createServer({
+   cert: fs.readFileSync('./cert/cert.pem'),
+    key: fs.readFileSync('./cert/key.pem')
+}, app).listen(port, () => {
+   console.log(`API CRUD segura en https://localhost:${port}/api`)
+})
